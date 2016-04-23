@@ -1,0 +1,86 @@
+xoxb-34926347489-CmnUKjeWOhzYN8CPspDQ9WX4
+
+// Description:
+//
+//
+// Dependencies:
+//   None
+//
+// Configuration:
+//   None
+//
+// Commands:
+//
+
+user = {}
+user.room = room # using numeric room id pulled from API
+robot.send {user: user}, "hello world"
+
+### users.list();
+module.exports = (robot) ->
+    robot.respond /users$/i, (msg) ->
+for user in robot.room.users
+  robot.respond user.name + "is logged in" ###
+
+//module.exports = function(robot) {
+    //  YOUR CODE HERE
+    //  Example
+    //  robot.hear(/javascript/i, function(msg) {
+    //    return msg.send("I love JavaScript!");
+    //  });
+//}
+
+//robot.hear(/Login?/, function(res) {
+//    return res.send("Who is logged in now?");
+//});
+/* enterReplies = ['Hi', 'Target Acquired', 'Glad you are here', 'Hello friend.', 'Gotcha', 'I see you']
+leaveReplies = ['Are you still there?', 'Sorry you are leaving me', 'Searching']
+
+module.exports = (robot) ->
+    robot.enter (msg) ->
+    msg.send msg.random enterReplies;
+
+robot.leave (msg) ->
+msg.send msg.random leaveReplies */
+
+
+module.exports = function(robot) {
+robot.respond / hello
+general$ / i, (msg) - >;
+robot.messageRoom;
+'#general', 'Hello #general';
+
+//};
+   // robot.respond(/is it a (weekend|holiday)\s?\?/i, function(msg){
+   //     var today = new Date();
+
+   //     msg.reply(today.getDay() === 0 || today.getDay() === 6 ? "YES" : "NO");
+   // });
+
+//    robot.hear(/i did it/i, function(msg){
+//        msg.send("Congratulations! Good job!");
+//    });
+
+//    robot.respond(/are you there?/i, function(msg){
+//        msg.reply('Yes, usually here, and listening.');
+//    });
+
+//    robot.respond(/convert \$(.*) to btc/i, function(res){
+//        var usd = res.match[1];
+//        res.reply('That is about ' + usd * 0.0024 + ' in BTC');
+//    });
+
+
+
+    //return robot.respond(/hi|hello/i, function(msg) {
+    //    return msg.send("Howdy!");
+    //});
+
+
+    enterReplies = ['Hi', 'Target Acquired', 'Firing', 'Hello friend.', 'Gotcha', 'I see you']
+    leaveReplies = ['Are you still there?', 'Target lost', 'Searching']
+    module.exports = (robot) ->
+      robot.enter (res) ->
+        res.send res.random enterReplies
+      robot.leave (res) ->
+        res.send res.random leaveReplies
